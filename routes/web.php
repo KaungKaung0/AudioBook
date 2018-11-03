@@ -10,12 +10,18 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Auth::routes(['verify' => true]);
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', "HomeController@index");
+
+Route::resource('song', "HomeController");
+
+Route::get('/upload' , "HomeController@create")->name('upload');
+Route::get('/select',"HomeController@select")->name('select');
+
+
+Route::get('/logout' , function(){
+	auth()->logout();
+	return redirect('/');
 });
 
-Route::resource('song', "MainController");
-
-Route::get('/upload' , "MainController@create")->name('upload');
-Route::get('/select',"MainController@select")->name('select');

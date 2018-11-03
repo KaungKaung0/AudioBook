@@ -60,7 +60,7 @@
 					<div class="col">
 						<a href="{{route('select',['id'=>$song->id,'ask'=>"backward"])}}" ><i class="fas fa-backward"></i></a>
 						<i id="fa-pp" class="fas fa-play" onclick="playPause()"></i>
-						<a href="{{route('select',['id'=>$song->id,'ask'=>"forward"])}}" ><i class="fas fa-forward"></i></a>
+						<a href="{{route('select',['id'=>$song->id,'ask'=>"forward"])}}" id="forward"><i class="fas fa-forward"></i></a>
 					</div>
 				</div>
 				</div>		

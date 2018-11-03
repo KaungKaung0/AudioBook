@@ -15,8 +15,6 @@ function playPause(){
 			$("#fa-pp").attr('class' , 'fas fa-play');
 			song.pause();
 		}
-		console.log(song.ended);
-		console.log("Streaming music");
 	}
 }
 
@@ -39,7 +37,8 @@ function initProgressBar(){
 	 progressbar.addEventListener("click", seek);
 
 	 if (song.currentTime == song.duration) {
-	 	document.getElementById('play-btn').className = "";
+	 	$("#fa-pp").attr('class' , 'fas fa-play');
+	 	document.getElementById("forward").click()	;
 	 }
 
 	 function seek(event) {
@@ -69,6 +68,5 @@ function initProgressBar(){
 	}
 
 	$(function(){
-		console.log("Document Ready!");
 		playPause();
 	})
