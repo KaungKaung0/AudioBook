@@ -26,7 +26,7 @@ class LoginController extends Controller
      * @var string
      */
     protected function redirectTo(){
-        return redirect()->route('song.index');
+        return redirect()->route('admin.index');
     }
 
     /**

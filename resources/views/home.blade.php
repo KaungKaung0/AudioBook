@@ -1,77 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>Song</title>
-	<link rel="stylesheet" href="css/style.css">
-
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">	
-
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
-
-</head>
-<body>
-	<div class="container">
-		<div class="row">
-			<table class="table">
-				<thead>
-					<tr>
-						<th scope="col">Title</th>
-						<th scope="col">Vocal</th>
-						<th scope="col">Category</th>
-						<th scope="col"></th>
-					</tr>
-				</thead>
-				<tbody>
-					@foreach($list as $data)
-					<tr>
-						<th scope="row">{!!$data->title!!}</th>
-						<th>{!!$data->vocal!!}</th>
-						<th>{!!$data->category!!}</th>
-						<th><a href="{{route('song.index',['id'=>$data->id])}}"><i class="fas fa-play"></i></a>
-						</th>
-						</tr>
-						@endforeach
-					</tbody>
-				</table>
-			</div>
-			<div class="row">
-				<a href="{{route('upload')}}" class="btn btn-primary">Upload New Song</a>
+@extends('layouts.main')
+@section('content')
+	<h1 class="my-4 text-center text-lg-left">Books</h1>
+	<div class="row">
+		@foreach($list as $data)
+		<div class="col-lg-4 col-sm-6 portfolio-item">
+			<div class="card h-100">
+				<a href="#"><img class="card-img-top" id="thumbnail" src="{{asset('/image/thumbnail/'.$data->thumbnail)}}" alt=""></a>
+				<div class="card-body">
+					<h4 class="card-title">
+						<p>{!!$data->title!!}</p>
+					</h4>
+					<p class="card-text">{!!str_limit($data->description,120)!!}</p>
+				</div>
 			</div>
 		</div>
-		@if(isset($song))
-		<footer class="footer">
-			<div class="container">
-				<div class="row">
-					<div class="col">
-						<img src="{{asset("image/madmad.jpg")}}" alt="" id="album_art">
-					</div>
-					<div class="col">
-						<p>{{$song->title}}</p>
-					</div>
-					<div class="col">
-						<audio id="song" src="{{asset('songs/'.$song->title . '.mp3')}}" ontimeupdate="initProgressBar()"></audio>
-						<span>
-							<progress id="seek-time" value="0" max="1"></progress>
-						</span>
-						<small style="float:left; position: relative; left:20px;" id="start-time"></small>
-						<small style="float:right; position: relative; right:20px;" id="end-time"></small>
-					</div>
-					<div class="col">
-						<a href="{{route('select',['id'=>$song->id,'ask'=>"backward"])}}" ><i class="fas fa-backward"></i></a>
-						<i id="fa-pp" class="fas fa-play" onclick="playPause()"></i>
-						<a href="{{route('select',['id'=>$song->id,'ask'=>"forward"])}}" id="forward"><i class="fas fa-forward"></i></a>
-					</div>
-				</div>
-				</div>		
-		 </footer>
+		@endforeach
+	</div>
+</main>
 
-			@endif
-			<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-			<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-			<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-	
-
-	<script src="js/myjs.js"></script>
-		</body>
-		</html>
+@endsection

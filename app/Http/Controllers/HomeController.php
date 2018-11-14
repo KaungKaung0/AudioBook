@@ -1,7 +1,7 @@
 <?php
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
-use App\Songs;
+use App\Book;
 class HomeController extends Controller
 {
     /**
@@ -16,17 +16,19 @@ class HomeController extends Controller
     public function index(Request $request)
     {
         //
-        $list = Songs::all();
+        $list = Book::all();
         if(is_null($request->id)){              
             return view('home' , compact('list'));          
         }
         else{
-           $song = Songs::where('id' , $request->id)->first();
-           if($song === null){
+           $audio = Audio::where('book_id' , $request->id)->first();
+           $thumb = Book::where('id' , $request->$id)->first();
+           if($audio === null){
             $id = $request->id -1;
-            $song = Songs::where('id' ,$id)->first();
+            $audio = Audio::where('book_id' ,$id)->first();
+            $thumb = Book::where('id' , $id)->first();
            }
-           return view('home' , compact('list' ,'song'));
+           return view('home' , compact('list' ,'audio' , 'thumb'));
         }
     }
     public function select(Request $request){
