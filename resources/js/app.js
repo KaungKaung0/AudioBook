@@ -5,8 +5,21 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-require('./bootstrap');
+ require('./bootstrap');
 
+ window.Vue = require('vue');
+
+/**
+ * The following block of code may be used to automatically register your
+ * Vue components. It will recursively scan this directory for the Vue
+ * components and automatically register them with their "basename".
+ *
+ * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
+ */
+
+ Vue.component('musicplayer', require('./components/PlayerComponent.vue'));
+// const files = require.context('./', true, /\.vue$/i)
+// files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key)))
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -14,4 +27,24 @@ require('./bootstrap');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
+ const app = new Vue({
+ 	el: '#app',
+ 	data:{
+ 		message:"Hello World"
+ 	}
+ });
 
+var player = new Vue({
+	el:'#player',
+	data:{
+		message: "Hello Vue",
+		audio: "",
+		audioFile:"./../audio/audio1.mp3"
+	},
+	methods:{
+		playAudio:function(){
+			this.audio = new Audio(this.audioFile);
+			this.audio.play();
+		}
+	}
+});

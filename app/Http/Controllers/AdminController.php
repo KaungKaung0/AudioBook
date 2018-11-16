@@ -142,7 +142,7 @@ public function audio_store($audio , $title){
         'duration' =>$duration,
         'played_count' => 0,
     ]);
-    $audio->move('audio/',$name.'.mp3');
+    $audio->move('./../audio/',$name.'.mp3');
 }
     /**
      * Display the specified resource.

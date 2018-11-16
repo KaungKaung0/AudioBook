@@ -1,5 +1,6 @@
 @extends('backend.main')
 @section('content')
+
 <a href="{{route('admin.create')}}" class="btn btn-primary">Upload A new Book</a>
 <button class="btn btn-primary" onclick="showRoleForm()">Add Role</button>
 <form action="{{route('admin.add_role')}}" method="POST" id="RoleForm" style="display: none;">
@@ -40,5 +41,12 @@
 				@endforeach
 			</tbody>
 		</table>
+		<div id="app">
+			<h1>@{{message}}</h1>
+		</div>
+		<div id="player">
+			<h1>@{{message}}</h1>
+			<button v-on:click = "playAudio()"><i class="fas fa-play"></i></button>
+		</div>	
 	</div>
 @endsection

@@ -2,6 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
+	<meta name="csrf-token" content="{{csrf_token()}}">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Audio Books</title>
 	<!-- Tell the browser to be responsive to screen width -->
@@ -21,11 +22,13 @@
   	<link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.css" rel="stylesheet">
   	{{--MY CSS --}}
   	<link rel="stylesheet" href="{{asset('css/admin.css')}}">
+  	<link rel="stylesheet" href="{{asset('css/app.css')}}">
+
 
 <!-- Google Font -->
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
-<body class="hold-transition skin-blue sidebar-mini" oncontextmenu="return false">
+<body class="hold-transition skin-blue sidebar-mini">
 	<div class="wrapper">
 
 		@include('backend.header')
@@ -75,4 +78,5 @@
 	<script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.js"></script>
 
 	<script src="{{asset('js/admin.js')}}"></script>
+	<script src="{{asset('js/app.js')}}"></script>
 	</html>

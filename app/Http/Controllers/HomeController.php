@@ -67,21 +67,6 @@ class HomeController extends Controller
     public function store(Request $request)
     {
         //
-        $validated_data = $request->validate([
-            'title' => 'required|max:100',
-            'song' => 'required|mimes:mpga',
-            'vocal' => 'required',
-            'category' => 'required'
-        ]);
-        Songs::create([
-            'title' => $validated_data['title'],
-            'vocal' => $validated_data['vocal'],
-            'category' => $validated_data['category']
-        ]);
-        $songs = $request->song;
-        $name = $validated_data['title'];
-        $songs->move('songs',$name.'.mp3');
-        return redirect()->route('song.index')->with('message' , 'Success!');
     }
     /**
      * Display the specified resource.
