@@ -69,7 +69,7 @@ class AdminController extends Controller
             'title'     => 'required|string',
             'author'    => 'required|string',
             'category'  => 'required|string',
-            'audio'      => 'required|mimes:mpga',
+            'audio'      => 'required|mimes:mpga,wav',
             'description'=> 'required'
         ]);
         //create a new author 
@@ -144,7 +144,7 @@ public function audio_store($audio , $title){
         'duration' =>$duration,
         'played_count' => 0,
     ]);
-    $audio->move('./../audio/',$name.'.mp3');
+    $audio->move('audio/',$name.'.mp3');
 }
     /**
      * Display the specified resource.

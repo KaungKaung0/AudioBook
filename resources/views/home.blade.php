@@ -10,7 +10,7 @@
 		@foreach($list as $data)
 		<div class="col-lg-3 col-sm-6 portfolio-item">
 			<div class="card h-100">
-				<a href="#"><img class="card-img-top" id="thumbnail" src="{{asset('/image/thumbnail/'.$data->thumbnail)}}" alt=""></a>
+				<a href="{{route('home.index' , ['id' =>$data->id])}}"><img class="card-img-top" id="thumbnail" src="{{asset('/image/thumbnail/'.$data->thumbnail)}}" alt="" onclick="playPause()"></a>
 				<div class="card-body">
 					<h4 class="card-title">
 						<p>{!!$data->title!!}</p>
