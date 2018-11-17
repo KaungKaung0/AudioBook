@@ -39,7 +39,7 @@ var player = new Vue({
 	data:{
 		message: "Hello Vue",
 		audio: "",
-		audioFile:"./../audio/audio1.mp3"
+		audioFile:"./audio/audio1.mp3"
 	},
 	methods:{
 		playAudio:function(){

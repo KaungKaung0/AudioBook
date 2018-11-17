@@ -35,7 +35,9 @@ class AdminController extends Controller
             $audio = Audio::where('book_id', $reqeust->id)->first();
              return view('backend.home' ,compact('list' , 'audio'));
         }
+
     }
+    
 
     /**
      * Show the form for creating a new resource.

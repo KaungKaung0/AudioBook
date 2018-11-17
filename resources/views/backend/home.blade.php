@@ -44,6 +44,9 @@
 		<div id="app">
 			<h1>@{{message}}</h1>
 		</div>
+		@if(isset($audio))
+			
+		@endif
 		<div id="player">
 			<h1>@{{message}}</h1>
 			<button v-on:click = "playAudio()"><i class="fas fa-play"></i></button>
