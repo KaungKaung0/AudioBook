@@ -19,6 +19,10 @@ Route::get('/logout' , function(){
 	return redirect('/');
 });
 
+Route::get('/phpinfo', function(){
+	dd(phpinfo());
+});
+
 // Backend
 Route::resource('admin' , "AdminController");
 Route::post('/add_role' , "AdminController@add_role")->name('admin.add_role');

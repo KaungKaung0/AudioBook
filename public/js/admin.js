@@ -30,15 +30,16 @@ function playPause(){
     console.log("No song request");
   }
   else{   
-    if(song.paused== true){
-      $("#fa-pp").attr('class' , 'fas fa-pause');
-      song.play();
+    song.play();
+    // if(song.paused== true){
+    //   $("#fa-pp").attr('class' , 'fas fa-pause');
+    //   song.play();
       
-    }
-    else{
-      $("#fa-pp").attr('class' , 'fas fa-play');
-      song.pause();
-    }
+    // }
+    // else{
+    //   $("#fa-pp").attr('class' , 'fas fa-play');
+    //   song.pause();
+    // }
   }
 }
 function showRoleForm(){
