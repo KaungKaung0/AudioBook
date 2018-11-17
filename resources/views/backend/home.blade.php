@@ -33,7 +33,8 @@
 					<th>
 						<a href="{{route('admin.index',['id'=>$data->id])}}"><i class="fas fa-play"></i></a>
 						@if(isset($audio))
-						<audio src="{{asset('audio/'. $audio->file_name . '.mp3')}}" id="song"></audio>
+						<p>Found	</p>
+						<audio src="{{asset('/audio/'. $audio->file_name . '.mp3')}}" id="song"></audio>
 						@endif
 					</th>
 					<th>{{$data->add_count}}</th>
