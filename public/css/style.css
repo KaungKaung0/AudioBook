@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css?family=Allerta+Stencil');
+@import url('https://fonts.googleapis.com/css?family=Federant');
+
 html,
 body {
  margin:0;
@@ -62,24 +65,83 @@ progress::-webkit-progress-value {
 
 
 .slidercontainer1{
- background-image: linear-gradient(to right bottom, #acc572, #b8b761, #c2a855, #ca984f, #cf884e);
- background-position: center;
- background-repeat: no-repeat;
- background-size: cover;
-
+background: #36362E;
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
 }
 
 .image_size_justifier_slider{
-  margin-left: 100px;
+  margin-left: 22%;
   margin-top: 15px;
   margin-bottom: 15px;
   width: 180px;
   height: 270px;
+  border-style: solid;
+  border-radius: 1px;
+  border-color: white;
+  box-shadow: 1px 2px;
 }
 
 .text_section{
  text-align: left;
- margin-top: 50px;
+ margin-top: 8%;
+ border-style: solid;
+ border-radius: 1px;
+ border-color: white;
+ color: white;
+ padding: 15px;
+ width: 80%;
+ box-shadow: 1px 2px;
+ margin-bottom: 15px;
+ margin-left: 3.5%;
+ font-family: 'Federant', cursive;
 }
 
 
+
+.font-style{
+  font-family: 'Federant', cursive;
+}
+
+
+
+@media (max-width: 575.98px) {
+  .image_size_justifier_slider{
+    margin-left: 35%;
+  }
+  .text_section{
+    margin-left: 11.5%;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .image_size_justifier_slider{
+    margin-left: 39%;
+  }
+  .text_section{
+    margin-left: 11.5%;
+  }
+}
+
+
+.nav-color{
+  background: #36362E;
+}
+
+.recommended_section{
+  padding-top: 2px;
+  padding-left: 30px;
+  height: 44px;
+  border-style: double;
+  border-color: white;
+  border-left: 0px;
+  border-right: 0px;
+  border-width: 8px;
+  background: #36362E;
+  border-top-style: solid;
+  border-top-width: 2px;
+  color: white;
+  font-size: 20px;
+  font-family: 'Allerta Stencil', sans-serif;
+}
