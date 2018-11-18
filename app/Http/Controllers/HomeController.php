@@ -2,6 +2,7 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Book;
+use App\Audio;
 class HomeController extends Controller
 {
     /**
@@ -21,33 +22,33 @@ class HomeController extends Controller
             return view('home' , compact('list'));          
         }
         else{
-           $audio = Audio::where('book_id' , $request->id)->first();
-           $thumb = Book::where('id' , $request->$id)->first();
-           if($audio === null){
+         $audio = Audio::where('book_id' , $request->id)->first();
+         $thumb = Book::where('id' , $request->id)->first();
+         if($audio === null){
             $id = $request->id -1;
             $audio = Audio::where('book_id' ,$id)->first();
             $thumb = Book::where('id' , $id)->first();
-           }
-           return view('home' , compact('list' ,'audio' , 'thumb'));
         }
+        return view('home' , compact('list' ,'audio' , 'thumb'));
     }
+}
     public function select(Request $request){
         if($request->ask =="backward"){
             if($request->id == 1){
-            return redirect()->route('song.index' , ['id' => $request->id]);
-        }
-        else{
-                $id = $request->id -1 ;
+                return redirect()->route('song.index' , ['id' => $request->id]);
+            }
+            else{
+            $id = $request->id -1 ;
                 return redirect()->route('song.index', ['id'=>$id]);
-        }
+            }
         }
         else if ($request->ask == "forward"){
             $id = $request->id +1;  
             return redirect()->route('song.index',['id'=>$id]);
         }
-        
-       
-    }
+
+
+}
     /**
      * Show the form for creating a new resource.
      *

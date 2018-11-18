@@ -48,7 +48,7 @@ function showRoleForm(){
   }
   
 $(document).ready(function() {
-  $('#summernote').summernote();
+  
   playPause();
 
 

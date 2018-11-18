@@ -17,7 +17,7 @@
  * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
  */
 
- Vue.component('musicplayer', require('./components/PlayerComponent.vue'));
+ Vue.component('list-component', require('./components/PlayerComponent.vue'));
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key)))
 
@@ -39,10 +39,13 @@ var player = new Vue({
 	data:{
 		message: "Hello Vue",
 		audio: "",
-		audioFile:"./../audio/Lay Yin Pyan Twy Lo.mp3"
+		path: "/audio/",
+		audioFile:""
 	},
 	methods:{
-		playAudio:function(){
+		playAudio:function(name){
+			audioFile = this.path + name +".mp3";
+			console.log(this.audioFile);
 			this.audio = new Audio(this.audioFile);
 			this.audio.play();
 		}
