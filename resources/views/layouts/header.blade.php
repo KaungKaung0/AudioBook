@@ -13,7 +13,7 @@
 
       <div class="row">
         <div class="col-md-4">
-          <img class="image_size_justifier_slider" src="https://drive.google.com/thumbnail?id=1xhyK15puxVOkmvQJxYCnFl4ZJhNrIiiD" alt="First slide">
+          <img class="image_size_justifier_slider book_size" src="https://drive.google.com/thumbnail?id=1xhyK15puxVOkmvQJxYCnFl4ZJhNrIiiD" alt="First slide">
         </div>
         <div class="col-md-8">
           <div class="text_section">
@@ -31,7 +31,7 @@
     <div class="slidercontainer1">
       <div class="row">
         <div class="col-md-4">
-          <img class="image_size_justifier_slider" src="https://drive.google.com/thumbnail?id=1DsW_6fvOSK4a9Aq64BvdB6osweyEqkFF" alt="Second slide">
+          <img class="image_size_justifier_slider book_size" src="https://drive.google.com/thumbnail?id=1DsW_6fvOSK4a9Aq64BvdB6osweyEqkFF" alt="Second slide">
         </div>
         <div class="col-md-8">
           <div class="text_section">
