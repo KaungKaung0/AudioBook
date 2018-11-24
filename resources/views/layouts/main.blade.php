@@ -24,7 +24,7 @@
   @include('layouts.nav')
   <div id="container">
    <div id="header">
-     @include('layouts.header')
+     @yield('slider')
    </div>
    <!-- Page Content -->
    <div id="body">

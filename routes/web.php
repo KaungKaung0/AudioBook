@@ -26,3 +26,5 @@ Route::get('/phpinfo', function(){
 // Backend
 Route::resource('admin' , "AdminController");
 Route::post('/add_role' , "AdminController@add_role")->name('admin.add_role');
+
+Route::get('/book/{id}' , "BookController@detail")->name('detail');
