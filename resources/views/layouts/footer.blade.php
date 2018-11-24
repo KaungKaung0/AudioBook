@@ -3,7 +3,8 @@
 			<div class="container">
 				<div class="row">
 					<div class="col">
-						<img src="{{asset("image/thumbnail/" . $thumb->thumbnail)}}" alt="" id="album_art">
+						<a href="{{route('detail' , ['id' => $audio->id])}}"><img src="{{asset("image/thumbnail/" . $thumb->thumbnail)}}" alt="" id="album_art">
+					</a>
 					</div>
 					<div class="col">
 						<p>{{$audio->file_name}}</p>

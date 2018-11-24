@@ -35,16 +35,16 @@ class HomeController extends Controller
     public function select(Request $request){
         if($request->ask =="backward"){
             if($request->id == 1){
-                return redirect()->route('song.index' , ['id' => $request->id]);
+                return redirect()->route('home.index' , ['id' => $request->id]);
             }
             else{
             $id = $request->id -1 ;
-                return redirect()->route('song.index', ['id'=>$id]);
+                return redirect()->route('home.index', ['id'=>$id]);
             }
         }
         else if ($request->ask == "forward"){
             $id = $request->id +1;  
-            return redirect()->route('song.index',['id'=>$id]);
+            return redirect()->route('home.index',['id'=>$id]);
         }
 
 
