@@ -19,6 +19,7 @@ class CreateAudioTable extends Migration
             $table->string('file_name');
             $table->string('duration');
             $table->integer('played_count');
+            $table->string('token')->nullable();
             $table->timestamps();
         });
     }

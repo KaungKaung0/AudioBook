@@ -1,5 +1,5 @@
 @extends('layouts.main')
-@section('content')
+{{-- @section('content')
 	<div class="row">
 
 		
@@ -12,4 +12,4 @@
 		<p>{{$detail->add_count}}</p>
 		
 	</div>
-@endsection
+@endsection --}}

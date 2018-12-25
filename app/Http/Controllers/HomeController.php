@@ -16,39 +16,17 @@ class HomeController extends Controller
     }
     public function index(Request $request)
     {
-        //
-        $list = Book::all();
+        $list = Book::simplePaginate(4);
+        //defaultReturn
         if(is_null($request->id)){              
             return view('home' , compact('list'));          
         }
         else{
-         $audio = Audio::where('book_id' , $request->id)->first();
-         $thumb = Book::where('id' , $request->id)->first();
-         if($audio === null){
-            $id = $request->id -1;
-            $audio = Audio::where('book_id' ,$id)->first();
-            $thumb = Book::where('id' , $id)->first();
+            $audio = Audio::where('id', $request->id)->first();
+            $thumb = Book::where('id' , $request->id)->first();
+            return view('home' , compact('list' ,'audio' , 'thumb'));
         }
-        return view('home' , compact('list' ,'audio' , 'thumb'));
     }
-}
-    public function select(Request $request){
-        if($request->ask =="backward"){
-            if($request->id == 1){
-                return redirect()->route('home.index' , ['id' => $request->id]);
-            }
-            else{
-            $id = $request->id -1 ;
-                return redirect()->route('home.index', ['id'=>$id]);
-            }
-        }
-        else if ($request->ask == "forward"){
-            $id = $request->id +1;  
-            return redirect()->route('home.index',['id'=>$id]);
-        }
-
-
-}
     /**
      * Show the form for creating a new resource.
      *

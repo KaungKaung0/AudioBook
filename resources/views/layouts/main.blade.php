@@ -15,6 +15,8 @@
 
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
 
+  {{-- Audio Player --}}
+  <link href="{{asset("vendor/css/styles.css")}}" rel="stylesheet">
 
 </head>
 
@@ -29,13 +31,13 @@
    <!-- Page Content -->
    <div id="body">
     <div id="player">
-       @yield('content')
-    </div> 
-  </div>
-  <div id="footer">
-    @include('layouts.footer')
-  </div>
-  <!-- Footer -->
+     @yield('content')
+   </div> 
+ </div>
+ <div id="footer">
+  @include('layouts.footer')
+</div>
+<!-- Footer -->
 </div>
 <!-- /.container -->
 <!-- Bootstrap core JavaScript -->
@@ -43,9 +45,14 @@
 
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 
-<script src="{{asset('js/stream.js')}}"></script>
-<script src="{{asset('js/main.js')}}"></script>
 
+
+{{-- Audio Player --}}
+
+<script type="text/javascript" src="{{asset("vendor/js/jquery-1.7.2.min.js")}}"></script> 
+
+<script type="text/javascript" src="{{asset("vendor/js/musicplayer.js")}}"></script>
+<script src="{{asset('js/stream.js')}}"></script>
 </body>
 
 </html>

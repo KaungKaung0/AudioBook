@@ -136,15 +136,16 @@ public function audio_store($audio , $title){
     if($sec <10) $sec = '0'.$sec; 
     $duration = $min .':' .$sec;
 
-    $name = $title;
+    $name = $title. '.mp3';
     $book = Book::where('title'  , $title)->first();
     Audio::create([
         'book_id' => $book->id,
         'file_name' => $name,
         'duration' =>$duration,
         'played_count' => 0,
+        'token' => rand(10000000,99999999)
     ]);
-    $audio->move('audio/',$name.'.mp3');
+    $audio->move(storage_path('app/audio/'),$name);
 }
     /**
      * Display the specified resource.
