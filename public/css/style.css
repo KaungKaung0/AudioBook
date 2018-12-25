@@ -160,5 +160,44 @@ progress::-webkit-progress-value {
   margin-left: -2px;
 }
 
+.footer-book-cover-size{
+  width: 45px;
+  height: 92.5px;
+  margin-top: 8px;
+  border-style: solid;
+  border-radius: 0.2px;
+  border-color: white;
+}
 
+.footer-controller{
+  height: 110px;
+  background: #36362E;
+  border-style: double;
+  border-color: white;
+  border-left: 0px;
+  border-right: 0px;
+  border-bottom: 0px;
+  border-width: 8px;
+  background: #36362E;
+}
 
+.col-controller{
+  margin-top: 38.83px;
+  color: white;
+}
+
+.change-color-fa{
+  color: white;
+}
+
+.backward-fa{
+  margin-right: 5px;
+}
+
+.play-fa{
+  margin-right: 5px;
+}
+
+.forward-fa{
+  margin-right: 5px;
+}

@@ -23,11 +23,11 @@
 <body>
 
   <!-- Navigation -->
-  @include('layouts.nav')
+
+  
+  
   <div id="container">
-   <div id="header">
-     @yield('slider')
-   </div>
+
    <!-- Page Content -->
    <div id="body">
     <div id="player">

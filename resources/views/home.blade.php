@@ -1,7 +1,7 @@
+@include('layouts.nav')
+@include('layouts.header')
+
 @extends('layouts.main')
-@section('slider')
-@extends('layouts.header')
-@endsection
 @section('content')
 	<div class="row">
 	<div class="col-lg-9 col-md-8 col-sm-5 col-12"><h1 class="my-4 text-left">Trendings</h1></div>
