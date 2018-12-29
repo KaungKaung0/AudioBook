@@ -14,13 +14,18 @@ class StreamController extends Controller
 		$this->middleware('verified');
 	}
 
+	public function player(Request $request){
+		$audio = Audio::where('id' , $request->id)->first();
+		return view('player' , compact('audio'));
+	}
+
 	public function play(Request $request){
 		$trial = $request->token;
 		$data = Audio::where('id' , $request->id)->first();
 		if($trial == $data->token){
 			$data->token = rand(10000000,99999999);
 			$data->save();
-			return response()->file(storage_path('app/audio/Cat.mp3'),[
+			return response()->file(storage_path('app/audio/Saung.mp3'),[
 				'Content-Type' => 'audio/mpeg'
 			]);
 		}

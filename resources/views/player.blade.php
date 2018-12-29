@@ -9,7 +9,7 @@
 <body>
 	<div class="example">
 		<ul class="playlist">
-			<li data-cover ="Example.jpg" data-artist = "ExampleArtist">
+			<li data-cover ="{{asset("image/thumbnail/Saung.jpg")}}" data-artist = "ExampleArtist">
 				<a href="{{url('/stream/'.$audio->token.'/1')}}">{{$audio->file_name}}</a>
 			</li>
 		</ul>
