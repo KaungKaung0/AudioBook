@@ -13,7 +13,7 @@
 
       <div class="row">
         <div class="col-md-4">
-          <img class="image_size_justifier_slider book_size" src="https://drive.google.com/thumbnail?id=1xhyK15puxVOkmvQJxYCnFl4ZJhNrIiiD" alt="First slide">
+          <a href="{{route('detail' , ['id' => 1])}}"><img class="image_size_justifier_slider book_size" src="https://drive.google.com/thumbnail?id=1xhyK15puxVOkmvQJxYCnFl4ZJhNrIiiD" alt="First slide"></a>
         </div>
         <div class="col-md-8">
           <div class="text_section">

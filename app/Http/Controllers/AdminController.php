@@ -190,5 +190,8 @@ public function audio_store($audio , $title){
     public function destroy($id)
     {
         //
+        $data = Audio::where('id' , $id)->first();
+        //thumbnail delete
+        $book = Book::where('id' , $id)->firsts();
     }
 }

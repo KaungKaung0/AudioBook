@@ -16,7 +16,7 @@ class StreamController extends Controller
 
 	public function player(Request $request){
 		$audio = Audio::where('id' , $request->id)->first();
-		return view('player' , compact('audio'));
+		return redirect()->route('home.index' , compact('audio'));
 	}
 
 	public function play(Request $request){
@@ -25,7 +25,7 @@ class StreamController extends Controller
 		if($trial == $data->token){
 			$data->token = rand(10000000,99999999);
 			$data->save();
-			return response()->file(storage_path('app/audio/Saung.mp3'),[
+			return response()->file(storage_path('app/audio/'.$data->file_name),[
 				'Content-Type' => 'audio/mpeg'
 			]);
 		}
@@ -34,22 +34,22 @@ class StreamController extends Controller
 		}
 	}
 
-	public function select(Request $request){
-		$id = $request->id;
-		if($request->ask =="backward"){
-			if($id == 1){
-				return redirect()->route('stream' , compact('id'));
-			}
-			else{
-				$id = $request->id -1 ;
-				return redirect()->route('stream' , compact('id'));
-			}
-		}
-		else if ($request->ask == "forward"){
-			$id = $request->id +1;  
-			return redirect()->route('stream' , compact('id'));
-		}
+// 	public function select(Request $request){
+// 		$id = $request->id;
+// 		if($request->ask =="backward"){
+// 			if($id == 1){
+// 				return redirect()->route('stream' , compact('id'));
+// 			}
+// 			else{
+// 				$id = $request->id -1 ;
+// 				return redirect()->route('stream' , compact('id'));
+// 			}
+// 		}
+// 		else if ($request->ask == "forward"){
+// 			$id = $request->id +1;  
+// 			return redirect()->route('stream' , compact('id'));
+// 		}
 
-	}
+// 	}
 
 }

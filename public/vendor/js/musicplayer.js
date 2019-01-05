@@ -8,7 +8,7 @@
   var pluginName = "musicPlayer",
     defaults = {
       playlistItemSelector: "li",
-      autoPlay: true,
+      autoPlay: false,
       volume: 80,
       loop: false,
       timeSeparator: " / ",

@@ -20,7 +20,11 @@ Route::get('/logout' , function(){
 	auth()->logout();
 	return redirect('/');
 });
+//detail
 Route::get('/book/{id}' , "BookController@detail")->name('detail');
+Route::get('/book/{id}/play' , "BookController@play")->name('detail.play');
+
+
 
 Route::get('/player' , "StreamController@player")->name('player');
 //Audio Streaming

@@ -16,17 +16,10 @@ class HomeController extends Controller
     }
     public function index(Request $request)
     {
-        $list = Book::simplePaginate(4);
-        //defaultReturn
-        if(is_null($request->id)){              
-            return view('home' , compact('list'));          
-        }
-        else{
-            $audio = Audio::where('id', $request->id)->first();
-            $thumb = Book::where('id' , $request->id)->first();
-            return view('home' , compact('list' ,'audio' , 'thumb'));
-        }
-    }
+        $list = Book::simplePaginate(4);          
+         return view('home' , compact('list'));          
+     }
+
     /**
      * Show the form for creating a new resource.
      *
